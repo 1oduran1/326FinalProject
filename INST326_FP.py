@@ -1,2 +1,2 @@
-"""Contact managemant application code
-Olivia Durán, """
+"""Contact management application code
+Olivia Durán, Alison Wu"""
