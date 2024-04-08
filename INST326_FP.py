@@ -58,3 +58,15 @@ class Phonebook():
             Side effects: None
         """
         return self.contacts
+    
+"""def search():
+    a function that can search the contacts dictionary and present the user with
+    the specific contact and contact information they are looking for.
+"""
+
+"""unit tests:
+test 1: checks if contact objects are properly created
+test 2: checks if Phone book objects are created
+test 3: checks if contacts are added
+test 4: checks that search function returns correct information
+    edge cases would be typos"""
