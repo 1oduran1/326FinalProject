@@ -18,7 +18,7 @@ class Phonebook:
     self.contacts = dict()
     self.book = list()
 
-  def __init__(self, contact):
+  def add_contact(self, contact):
     """ Add contact to contacts.
         
         Args:
