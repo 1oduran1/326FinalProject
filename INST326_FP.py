@@ -1,18 +1,26 @@
 """Contact Management application code
-Olivia Durán, Alison Wu"""
+Olivia Durán, Alison Wu, """
 
 class Phonebook:
   """ An application for Contact Management and phone book logging
   
     Attributes:
           name (str): the user's name.
-          contacts (dict of str: Contact): the list of contacts that the users communicates with.
+          
+          contacts (dict of str: Contact): dictionary where keys are the contact
+          name and values are their contact information
+          
+          book (list of contacts): list of contact objects that the user 
+          communicates with
   """
   def __init__ (self, name):
     """ Initalize new Phonebook objects.
 
-    Attributes:
-      Sets attributes to name, contacts, book .
+    Args:
+        name (str): the user's name.
+
+    Side effects:
+        sets attributes name, contacts, and book
     """
     self.name = name
     self.contacts = dict()
@@ -24,3 +32,4 @@ class Phonebook:
         Args:
             contact (Phonebook): Phonebook log of a contact to add
     """
+    self.contacts[contact.name] = contact
