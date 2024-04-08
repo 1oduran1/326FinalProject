@@ -61,7 +61,8 @@ class Phonebook():
     
 """def main():
     Will prompt the user to either add a contact, look up an existing contact, 
-    look up the entire phonebook, or delete a contact.
+    look up the entire phonebook, delete a contact, modify an existing contact,
+    or return the entire phonebook.
 """
 
 """def search():
