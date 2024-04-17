@@ -1,8 +1,8 @@
 """Contact Management application code
-Olivia Durán, Alison Wu, """
+Olivia Durán, Alison Wu, Alex Yang, """
 
 class Contact():
-    """A class for that represents a contact.
+    """A class that represents a contact.
 
     Attributes:
         first_name (str): first name of the contact
@@ -43,7 +43,7 @@ class Phonebook():
                 phone (str): phone number of contact
                 email (str): email of contact
                 
-            Side effets: 
+            Side effects: 
                 creates Contact object and adds contact information to
             contacts dictionary
         """
@@ -59,6 +59,12 @@ class Phonebook():
         """
         return self.contacts
     
+"""def main():
+    Will prompt the user to either add a contact, look up an existing contact, 
+    look up the entire phonebook, delete a contact, modify an existing contact,
+    or return the entire phonebook.
+"""
+
 """def search():
     a function that can search the contacts dictionary and present the user with
     the specific contact and contact information they are looking for.
