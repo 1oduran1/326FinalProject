@@ -88,9 +88,8 @@ class Phonebook():
     the specific contact and contact information they are looking for.
 """
 
-"""unit tests:
-test 1: checks if contact objects are properly created
-test 2: checks if Phone book objects are created
-test 3: checks if contacts are added
-test 4: checks that search function returns correct information
-    edge cases would be typos"""
+"""unit tests (for methods and functions with no output):
+unit test for add_contact
+unit test for remove_contact
+unit test for update_contact
+unit test for clear_all_contacts"""
