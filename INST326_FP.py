@@ -58,12 +58,7 @@ class Phonebook():
             Side effects: None
         """
         return self.contacts
-    
-"""def main():
-    Will prompt the user to either add a contact, look up an existing contact, 
-    delete a contact, update an existing contact, return all contacts
-    get the number of contacts, delete all contacts, or export the contacts to a file.
-"""
+
 
 #def add_contact(name, number): Olivia DONE
 
@@ -81,15 +76,11 @@ class Phonebook():
 
 #def export_to_file(filename): Alex
 
-
-
-"""def search():
-    a function that can search the contacts dictionary and present the user with
-    the specific contact and contact information they are looking for.
+"""def main():
+    Will prompt the user to either add a contact, look up an existing contact, 
+    delete a contact, update an existing contact, return all contacts
+    get the number of contacts, delete all contacts, or export the contacts to a file.
 """
+"""if name = __main__"""
 
-"""unit tests (for methods and functions with no output):
-unit test for add_contact
-unit test for remove_contact
-unit test for update_contact
-unit test for clear_all_contacts"""
+"""parse_args"""
