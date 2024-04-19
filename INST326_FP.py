@@ -61,9 +61,27 @@ class Phonebook():
     
 """def main():
     Will prompt the user to either add a contact, look up an existing contact, 
-    look up the entire phonebook, delete a contact, modify an existing contact,
-    or return the entire phonebook.
+    delete a contact, update an existing contact, return all contacts
+    get the number of contacts, delete all contacts, or export the contacts to a file.
 """
+
+#def add_contact(name, number): Olivia DONE
+
+#def remove_contact(name): Binta
+
+#def search_contact(name): Binta
+
+#def update_contact(name, new_number): Alison
+
+#def get_all_contacts(): Olivia
+
+#def get_contact_count(): Alison
+
+#def clear_all_contacts(): Alex
+
+#def export_to_file(filename): Alex
+
+
 
 """def search():
     a function that can search the contacts dictionary and present the user with
