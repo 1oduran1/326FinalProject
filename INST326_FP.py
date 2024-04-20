@@ -1,3 +1,4 @@
+import csv
 """Contact Management application code
 Olivia Durán, Alison Wu, Alex Yang, """
 
@@ -34,7 +35,7 @@ class Phonebook():
         """
         self.contacts = dict()
 
-    def add_contact(self, name, address, phone, email):
+    def add_contact(self, name, address, phone, email): #Olivia
         """ Add contact to contacts.
             
             Args:
@@ -50,7 +51,7 @@ class Phonebook():
         contact = Contact(name, address, phone, email)
         self.contacts[contact.name] = (contact.address, contact.phone, contact.email)
 
-    def update_contact(self, name, new_number):
+    def update_contact(self, name, new_number): # Alison
         """Updates the phone number of an existing contact.
         
         Args:
@@ -66,7 +67,7 @@ class Phonebook():
         else:
             return (f"Contact '{name} could not be found in the phonebook.")
         
-    def get_contact_count(self):
+    def get_contact_count(self): #Alison
         """Get the total number of contacts in the phonebook.
 
         Returns:
@@ -82,7 +83,24 @@ class Phonebook():
             Side effects: None
         """
         return self.contacts
+    
+    def clear_all_contacts(self): #Alex
+    #Deletes all contacts from the phonebook if the user chooses this option
+        self.clear()
 
+    def export_to_file(self): #Alex
+        #Writes out the contents of the phonebook to a csv file named "phonebook.csv"
+        with open('phonebook.csv', 'w') as csv_file:  
+            writer = csv.writer(csv_file)
+            for key, value in self.items():
+                writer.writerow([key, value])
+        
+
+"""def main():
+    Will prompt the user to either add a contact, look up an existing contact, 
+    delete a contact, update an existing contact, return all contacts
+    get the number of contacts, delete all contacts, or export the contacts to a file.
+"""
 
 #def add_contact(name, number): Olivia DONE
 
@@ -96,15 +114,8 @@ class Phonebook():
 
 #def get_contact_count(): Alison
 
-#def clear_all_contacts(): Alex
 
-#def export_to_file(filename): Alex
 
-"""def main():
-    Will prompt the user to either add a contact, look up an existing contact, 
-    delete a contact, update an existing contact, return all contacts
-    get the number of contacts, delete all contacts, or export the contacts to a file.
-"""
 """if name = __main__"""
 
 """parse_args"""
