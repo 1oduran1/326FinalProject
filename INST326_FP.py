@@ -49,7 +49,31 @@ class Phonebook():
         """
         contact = Contact(name, address, phone, email)
         self.contacts[contact.name] = (contact.address, contact.phone, contact.email)
-    
+
+    def update_contact(self, name, new_number):
+        """Updates the phone number of an existing contact.
+        
+        Args:
+            name (str): Name of the contact to update.
+            new_number (str): New phone number to set.
+             
+        Returns:
+            str: A message indicating the result of the operation."""
+        
+        if name in self.contacts:
+            self.contacts[name] = (self.contacts[name][0], new_number, self.contacts[name][2])
+            return (f"Contact '{name}' updated successfully with new phone number: {new_number}.")
+        else:
+            return (f"Contact '{name} could not be found in the phonebook.")
+        
+    def get_contact_count(self):
+        """Get the total number of contacts in the phonebook.
+
+        Returns:
+            int: Total number of contacts.
+        """
+        return len(self.contacts)
+        
     def show(self):
         """ Shows full contact list.
             
