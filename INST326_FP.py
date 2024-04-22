@@ -1,6 +1,6 @@
 import csv
 """Contact Management application code
-Olivia Durán, Alison Wu, Alex Yang, """
+Olivia Durán, Alison Wu, Alex Yang, Binta sanyang """
 
 class Contact():
     """A class that represents a contact.
