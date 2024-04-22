@@ -138,31 +138,38 @@ def main():
          '6. get contact count\n'
          '7. clear all contacts\n'
          '8. export contacts to csv file\n')
-    menu_input = input('Please input the item number you want. ')
-    if menu_input == '1':
-       name_input = input('Contact name?')
-       address_input = input('Contact address?')
-       phone_input = input('Contact phone?')
-       email_input = input('Contact email?')
-       p.add_contact(name_input, address_input, phone_input, email_input)
-    if menu_input == '2':
-        delete_input = input('Name of contact to delete: ')
-        p.remove_contact(delete_input)
-    if menu_input == '3':
-        search_input = input('Name of contact you want to search: ')
-        p.search_contact(search_input)
-    if menu_input == '4':
-        update_input = input('Name of contact you want to update: ')
-        new_phone = input('New number of contact:')
-        p.update_contact(update_input, new_phone)
-    if menu_input == '5':
-        p.get_all_contacts()
-    if menu_input == '6':
-        p.get_contact_count()
-    if menu_input == '7':
-        p.clear_all_contacts()
-    if menu_input == '8':
-        p.export_to_file()
+    run = True
+    while run:
+        menu_input = input('Please input the item number you want. ')
+        if menu_input == '1':
+            name_input = input('Contact name? ')
+            address_input = input('Contact address? ')
+            phone_input = input('Contact phone? ')
+            email_input = input('Contact email? ')
+            p.add_contact(name_input, address_input, phone_input, email_input)
+        if menu_input == '2':
+            delete_input = input('Name of contact to delete: ')
+            p.remove_contact(delete_input)
+        if menu_input == '3':
+            search_input = input('Name of contact you want to search: ')
+            p.search_contact(search_input)
+        if menu_input == '4':
+            update_input = input('Name of contact you want to update: ')
+            new_phone = input('New number of contact:')
+            p.update_contact(update_input, new_phone)
+        if menu_input == '5':
+            p.get_all_contacts()
+        if menu_input == '6':
+            p.get_contact_count()
+        if menu_input == '7':
+            p.clear_all_contacts()
+        if menu_input == '8':
+            p.export_to_file()
+        loop_input = input('Run again? y/n: ')
+        if loop_input.lower() == 'y':
+            pass
+        if loop_input.lower() == 'n':
+            run = False
 
 #def add_contact(name, number): Olivia DONE
 
