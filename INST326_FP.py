@@ -51,8 +51,30 @@ class Phonebook():
         contact = Contact(name, address, phone, email)
         self.contacts[contact.name] = (contact.address, contact.phone, contact.email)
 
+    def remove_contact(name): #Binta
+        """ Removes a contact from the phonebook.
+
+        Args:
+            name: The name of the contact to remove. """
+        if name in phonebook:
+                del phonebook[name]
+                
+    
+    def search_contact(name): #Binta
+        """ Searches for a contact by name and returns their phone number.
+
+        Args: name: The name of the contact to search for.
+
+        Returns: The phone number of the contact if found, otherwise a message indicating 
+        the contact is not found.
+        """
+        if name in phonebook:
+            return phonebook[name]
+        else:
+            return f"Contact {name} not found in phonebook."
+
     def update_contact(self, name, new_number): # Alison
-        """Updates the phone number of an existing contact.
+        """ Updates the phone number of an existing contact.
         
         Args:
             name (str): Name of the contact to update.
