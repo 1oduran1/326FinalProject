@@ -1,4 +1,6 @@
 import csv
+import sys
+import argparse
 """Contact Management application code
 Olivia Durán, Alison Wu, Alex Yang, Binta sanyang """
 
@@ -34,7 +36,7 @@ class Phonebook():
             sets contacts attribute
         """
         self.contacts = dict()
-
+        
     def add_contact(self, name, address, phone, email): #Olivia
         """ Add contact to contacts.
             
@@ -50,17 +52,16 @@ class Phonebook():
         """
         contact = Contact(name, address, phone, email)
         self.contacts[contact.name] = (contact.address, contact.phone, contact.email)
-
-    def remove_contact(name): #Binta
+    def remove_contact(self, name): #Binta
         """ Removes a contact from the phonebook.
 
         Args:
             name: The name of the contact to remove. """
-        if name in phonebook:
-                del phonebook[name]
+        if name in self.contacts:
+            del self.contacts[name]
                 
     
-    def search_contact(name): #Binta
+    def search_contact(self, name): #Binta
         """ Searches for a contact by name and returns their phone number.
 
         Args: name: The name of the contact to search for.
@@ -68,8 +69,8 @@ class Phonebook():
         Returns: The phone number of the contact if found, otherwise a message indicating 
         the contact is not found.
         """
-        if name in phonebook:
-            return phonebook[name]
+        if name in self.contacts:
+            return self.contacts[name]
         else:
             return f"Contact {name} not found in phonebook."
 
@@ -97,7 +98,7 @@ class Phonebook():
         """
         return len(self.contacts)
         
-    def show(self):
+    def get_all_contacts(self): #Olivia
         """ Shows full contact list.
             
             Args: None
@@ -118,12 +119,32 @@ class Phonebook():
                 writer.writerow([key, value])
         
 
-"""def main():
-    Will prompt the user to either add a contact, look up an existing contact, 
-    delete a contact, update an existing contact, return all contacts
-    get the number of contacts, delete all contacts, or export the contacts to a file.
-"""
+def main():
+    """Run the Phonebook methods based on what the user chooses.
 
+    Args:
+        None
+
+    Returns:
+        float or int: the area of the square.
+    """
+    print('Menu:\n'
+         '1. add contact\n'
+         '2. remove contact\n'
+         '3. search contact\n'
+         '4. update contact\n'
+         '5. get all contacts\n'
+         '6. get contact count\n'
+         '7. clear all contacts\n'
+         '8. export contacts to csv file\n')
+    menu_input = input('Please input the item number you want. ')
+    if menu_input == 1:
+       name_input = input('Contact name?')
+       address_input = input('Contact address?')
+       phone_input = input('Contact phone?')
+       email_input = input('Contact email?')
+       Phonebook.add_contact(name_input, address_input, phone_input, email_input)
+       
 #def add_contact(name, number): Olivia DONE
 
 #def remove_contact(name): Binta
@@ -132,7 +153,7 @@ class Phonebook():
 
 #def update_contact(name, new_number): Alison
 
-#def get_all_contacts(): Olivia
+#def get_all_contacts(): Olivia DONE
 
 #def get_contact_count(): Alison
 
