@@ -52,6 +52,7 @@ class Phonebook():
         """
         contact = Contact(name, address, phone, email)
         self.contacts[contact.name] = (contact.address, contact.phone, contact.email)
+    
     def remove_contact(self, name): #Binta
         """ Removes a contact from the phonebook.
 
@@ -60,7 +61,6 @@ class Phonebook():
         if name in self.contacts:
             del self.contacts[name]
                 
-    
     def search_contact(self, name): #Binta
         """ Searches for a contact by name and returns their phone number.
 
@@ -128,6 +128,7 @@ def main():
     Returns:
         float or int: the area of the square.
     """
+    p = Phonebook()
     print('Menu:\n'
          '1. add contact\n'
          '2. remove contact\n'
@@ -143,8 +144,26 @@ def main():
        address_input = input('Contact address?')
        phone_input = input('Contact phone?')
        email_input = input('Contact email?')
-       Phonebook.add_contact(name_input, address_input, phone_input, email_input)
-       
+       p.add_contact(name_input, address_input, phone_input, email_input)
+    if menu_input == 2:
+        delete_input = input('Name of contact to delete: ')
+        p.remove_contact(delete_input)
+    if menu_input == 3:
+        search_input = input('Name of contact you want to search: ')
+        p.search_contact(search_input)
+    if menu_input == 4:
+        update_input = input('Name of contact you want to update: ')
+        new_phone = input('New number of contact:')
+        p.update_contact(update_input, new_phone)
+    if menu_input == 5:
+        p.get_all_contacts()
+    if menu_input == 6:
+        p.get_contact_count()
+    if menu_input == 7:
+        p.clear_all_contacts()
+    if menu_input == 8:
+        p.export_to_file()
+
 #def add_contact(name, number): Olivia DONE
 
 #def remove_contact(name): Binta
@@ -156,8 +175,6 @@ def main():
 #def get_all_contacts(): Olivia DONE
 
 #def get_contact_count(): Alison
-
-
 
 """if name = __main__"""
 
