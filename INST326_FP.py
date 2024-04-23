@@ -106,7 +106,7 @@ class Phonebook():
             Side effects: None
         """
         for name, information in self.contacts.items():
-            print(f"Name: {name}, Address: {information[0]}, Phone: {information[1]}, Email: {information[2]}")
+            print(f"Name: {name}, Address: {information[0]} Phone: {information[1]} Email: {information[2]}")
     
     def clear_all_contacts(self): #Alex
     #Deletes all contacts from the phonebook if the user chooses this option
@@ -130,7 +130,9 @@ def main():
         float or int: the area of the square.
     """
     p = Phonebook()
-    print('Menu:\n'
+    run = True
+    while run:
+        print('Menu:\n'
          '1. add contact\n'
          '2. remove contact\n'
          '3. search contact\n'
@@ -139,8 +141,6 @@ def main():
          '6. get contact count\n'
          '7. clear all contacts\n'
          '8. export contacts to csv file\n')
-    run = True
-    while run:
         menu_input = input('Please input the item number you want. ')
         if menu_input == '1':
             name_input = input('Contact name? ')
