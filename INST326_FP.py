@@ -105,7 +105,8 @@ class Phonebook():
             
             Side effects: None
         """
-        return self.contacts
+        for name, information in self.contacts.items():
+            print(f"Name: {name}, Address: {information[0]}, Phone: {information[1]}, Email: {information[2]}")
     
     def clear_all_contacts(self): #Alex
     #Deletes all contacts from the phonebook if the user chooses this option
