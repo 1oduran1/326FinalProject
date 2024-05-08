@@ -173,16 +173,5 @@ def main():
             run = False
             quit
 
-#def add_contact(name, number): Olivia DONE
-
-#def remove_contact(name): Binta
-
-#def search_contact(name): Binta
-
-#def update_contact(name, new_number): Alison
-
-#def get_all_contacts(): Olivia DONE
-
-#def get_contact_count(): Alison
-
-main()
+if __name__ == '__main__':
+    main()
