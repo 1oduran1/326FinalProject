@@ -52,7 +52,6 @@ class Phonebook():
         contact = Contact(name, address, phone, email)
         self.contacts[contact.name] = (contact.address, contact.phone, contact.email)
         
-    
     def remove_contact(self, name): #Binta
         """ Removes a contact from the phonebook.
 
@@ -70,9 +69,10 @@ class Phonebook():
         the contact is not found.
         """
         if name in self.contacts:
-            return self.contacts[name]
+            print(f"Name: {name} Address: {self.contacts[name][0]} Phone: {self.contacts[name][1]} Email: {self.contacts[name][2]}")
         else:
-            return f"Contact {name} not found in phonebook."
+            print(f"Contact {name} not found in phonebook.")
+        
 
     def update_contact(self, name, new_number): # Alison
         """ Updates the phone number of an existing contact.
@@ -86,9 +86,9 @@ class Phonebook():
         
         if name in self.contacts:
             self.contacts[name] = (self.contacts[name][0], new_number, self.contacts[name][2])
-            return (f"Contact '{name}' updated successfully with new phone number: {new_number}.")
+            print(f"Contact '{name}' updated successfully with new phone number: {new_number}.")
         else:
-            return (f"Contact '{name} could not be found in the phonebook.")
+            print(f"Contact '{name} could not be found in the phonebook.")
         
     def get_contact_count(self): #Alison
         """Get the total number of contacts in the phonebook.
@@ -96,7 +96,7 @@ class Phonebook():
         Returns:
             int: Total number of contacts.
         """
-        return len(self.contacts)
+        print(len(self.contacts))
         
     def get_all_contacts(self): #Olivia
         """ Shows full contact list.
@@ -106,19 +106,19 @@ class Phonebook():
             Side effects: None
         """
         for name, information in self.contacts.items():
-            print(f"Name: {name}, Address: {information[0]} Phone: {information[1]} Email: {information[2]}")
+            print(f"Name: {name} Address: {information[0]} Phone: {information[1]} Email: {information[2]}")
     
     def clear_all_contacts(self): #Alex
     #Deletes all contacts from the phonebook if the user chooses this option
-        self.clear()
+        self.contacts.clear()
 
-    def export_to_file(self): #Alex
-        #Writes out the contents of the phonebook to a csv file named "phonebook.csv"
-        with open('phonebook.csv', 'w') as csv_file:  
+    def export_to_file(self):
+        """Writes out the contents of the phonebook to a csv file named 'phonebook.csv'."""
+        with open('phonebook.csv', 'w', newline='') as csv_file:
             writer = csv.writer(csv_file)
-            for key, value in self.items():
-                writer.writerow([key, value])
-        
+            writer.writerow(['Name', 'Address', 'Phone', 'Email'])  # Write header row
+            for key, value in self.contacts.items():
+                writer.writerow([key, *value])
 
 def main():
     """Run the Phonebook methods based on what the user chooses.
