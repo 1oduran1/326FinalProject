@@ -148,30 +148,38 @@ def main():
             phone_input = input('Contact phone? ')
             email_input = input('Contact email? ')
             p.add_contact(name_input, address_input, phone_input, email_input)
-        if menu_input == '2':
+        elif menu_input == '2':
             delete_input = input('Name of contact to delete: ')
             p.remove_contact(delete_input)
-        if menu_input == '3':
+        elif menu_input == '3':
             search_input = input('Name of contact you want to search: ')
             p.search_contact(search_input)
-        if menu_input == '4':
+        elif menu_input == '4':
             update_input = input('Name of contact you want to update: ')
             new_phone = input('New number of contact:')
             p.update_contact(update_input, new_phone)
-        if menu_input == '5':
+        elif menu_input == '5':
             p.get_all_contacts()
-        if menu_input == '6':
+        elif menu_input == '6':
             p.get_contact_count()
-        if menu_input == '7':
+        elif menu_input == '7':
             p.clear_all_contacts()
-        if menu_input == '8':
+        elif menu_input == '8':
             p.export_to_file()
-        loop_input = input('Run again? y/n: ')
-        if loop_input.lower() == 'y':
-            pass
-        if loop_input.lower() == 'n':
-            run = False
-            quit
+        else:
+            print('Please input 1 - 8.')
+        again = True
+        while again:
+            loop_input = input('Run again? y/n: ')
+            if loop_input.lower() == 'y':
+                again = False
+                pass
+            elif loop_input.lower() == 'n':
+                run = False
+                again = False
+                quit
+            else:
+                print('Please input y or n.')
 
 if __name__ == '__main__':
     main()
