@@ -8,8 +8,7 @@ class Contact():
     """A class that represents a contact.
 
     Attributes:
-        first_name (str): first name of the contact
-        last_name (str): last name of the contact
+        name (str): name of the contact
         address (str): address of the contact
         phone (str): phone number of the contact
         email (str): email of the contact
@@ -52,6 +51,7 @@ class Phonebook():
         """
         contact = Contact(name, address, phone, email)
         self.contacts[contact.name] = (contact.address, contact.phone, contact.email)
+        
     
     def remove_contact(self, name): #Binta
         """ Removes a contact from the phonebook.
@@ -171,6 +171,7 @@ def main():
             pass
         if loop_input.lower() == 'n':
             run = False
+            quit
 
 #def add_contact(name, number): Olivia DONE
 
