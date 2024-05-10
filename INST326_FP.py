@@ -109,8 +109,14 @@ class Phonebook():
             print(f"Name: {name} Address: {information[0]} Phone: {information[1]} Email: {information[2]}")
     
     def clear_all_contacts(self): #Alex
-    #Deletes all contacts from the phonebook if the user chooses this option
-        self.contacts.clear()
+        """ Deletes all contacts from the phonebook if the user chooses this option.
+
+            Args: None
+        """
+        confirm = input('Type "yes" to confirm, otherwise type "no" to cancel')
+        if confirm:
+            self.contacts.clear()
+            
 
     def export_to_file(self):
         """Writes out the contents of the phonebook to a csv file named 'phonebook.csv'."""
