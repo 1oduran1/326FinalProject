@@ -1,6 +1,4 @@
 import csv
-import sys
-import argparse
 """Contact Management application code
 Olivia Durán, Alison Wu, Alex Yang, Binta sanyang """
 
@@ -28,6 +26,7 @@ class Phonebook():
     """
     def __init__ (self):
         """ Initalize new Phonebook objects.
+        
         Args:
             None
 
@@ -39,15 +38,15 @@ class Phonebook():
     def add_contact(self, name, address, phone, email): #Olivia
         """ Add contact to contacts.
             
-            Args:
-                name (str): name of contact
-                address (str): address of contact
-                phone (str): phone number of contact
-                email (str): email of contact
+        Args:
+            name (str): name of contact
+            address (str): address of contact
+            phone (str): phone number of contact
+            email (str): email of contact
                 
-            Side effects: 
-                creates Contact object and adds contact information to
-            contacts dictionary
+        Side effects: 
+            creates Contact object and adds contact information to
+        contacts dictionary
         """
         contact = Contact(name, address, phone, email)
         self.contacts[contact.name] = (contact.address, contact.phone, contact.email)
@@ -57,6 +56,7 @@ class Phonebook():
 
         Args:
             name: The name of the contact to remove. """
+            
         if name in self.contacts:
             del self.contacts[name]
                 
@@ -112,6 +112,9 @@ class Phonebook():
         """ Deletes all contacts from the phonebook if the user chooses this option.
 
             Args: None
+            
+            Side effects:
+                Deletes all contacts from self.contacts
         """
         confirm = input('Type "yes" to confirm, otherwise type "no" to cancel')
         if confirm:
@@ -119,7 +122,14 @@ class Phonebook():
             
 
     def export_to_file(self):
-        """Writes out the contents of the phonebook to a csv file named 'phonebook.csv'."""
+        """Writes out the contents of the phonebook to a csv file named 'phonebook.csv'.
+        
+        Args:
+            None
+            
+        Side effects:
+            creates 'phonebook.csv' in directory of this file
+        """
         with open('phonebook.csv', 'w', newline='') as csv_file:
             writer = csv.writer(csv_file)
             writer.writerow(['Name', 'Address', 'Phone', 'Email'])  # Write header row
@@ -133,7 +143,7 @@ def main():
         None
 
     Returns:
-        float or int: the area of the square.
+        None.
     """
     p = Phonebook()
     run = True
