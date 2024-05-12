@@ -1,6 +1,7 @@
-import csv
 """Contact Management application code
 Olivia Durán, Alison Wu, Alex Yang, Binta sanyang """
+
+import csv
 
 class Contact():
     """A class that represents a contact.
@@ -183,10 +184,10 @@ def main():
         elif menu_input == '8':
             p.export_to_file()
         else:
-            print('Please input 1 - 8.')
+            print('Please input 1 - 8.\n')
         again = True
         while again:
-            loop_input = input('Run again? y/n: ')
+            loop_input = input('\nRun again? y/n: ')
             if loop_input.lower() == 'y':
                 again = False
                 pass
@@ -195,7 +196,7 @@ def main():
                 again = False
                 quit
             else:
-                print('Please input y or n.')
+                print('Please input y or n.\n')
 
 if __name__ == '__main__':
     main()
