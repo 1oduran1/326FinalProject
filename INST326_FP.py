@@ -133,7 +133,7 @@ class Phonebook():
         """
         with open('phonebook.csv', 'w', newline='') as csv_file:
             writer = csv.writer(csv_file)
-            writer.writerow(['Name', 'Address', 'Phone', 'Email'])  # Write header row
+            writer.writerow(['Name', 'Address', 'Phone', 'Email'])
             for key, value in self.contacts.items():
                 writer.writerow([key, *value])
 
